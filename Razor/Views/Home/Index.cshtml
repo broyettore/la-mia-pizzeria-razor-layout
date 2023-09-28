@@ -27,7 +27,7 @@
         return sum;
     }
 
-    List<int> GenListOfRandNums(int n)
+    List<int> GenListOfRandNums(int n) // List of random number
     {
         int min = 1;
         int max = 91;
@@ -48,9 +48,14 @@
     string mySurname = "Bagnarola";
     string phrase = "nel mezzo del cammin di nostra vita";
     int n = 8;
+    int nAlt = 20;
+
+    // dates instances
     DateTime myDate = DateTime.Now;
     DateTime sevenDaysAgo = myDate.AddDays(-7);
     DateTime nextYearDate = myDate.AddYears(1);
+
+    // formatted dates
     string dayOfWeekNextYear = nextYearDate.ToString("dddd");
     string todayDayOfTheWeek = myDate.ToString("dddd");
     string formattedDate = myDate.ToString("yyyy-MM-dd HH:mm:ss");
@@ -62,12 +67,12 @@
 
 }
 
-<div class="text-center">
+<div>
     <h2>Hello @myName @mySurname</h2>
     <span>The sum of numbers up to @n is: @sumN</span>
     <p>the number of times the letter a is present in this sentence "nel mezzo del cammin di nostra vita" is : @countA</p>                    
     <p> La lista di numeri random compresi tra 20 e 70 sono:
-        @foreach(int num in GenListOfRandNums(20))
+        @foreach(int num in GenListOfRandNums(nAlt))
         {
             if(num > 20 && num < 70)
             {
@@ -77,7 +82,7 @@
     </p>
     <p>Today's date is: @formattedDate</p>
     <p>Seven days ago was: @formattedDatePast</p>
-    <p>Today's day is: @formattedDate</p>
+    <p>Today's day is: @todayDayOfTheWeek</p>
     <p>Today's day next year is: @dayOfWeekNextYear</p>
 </div>
 
